@@ -1,0 +1,1550 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="数据库项目实践（一）, SGYX">
+    <meta name="description" content="项目整体需求分析项目： 项目名称， 计划名称， 项目类型， 项目进度， 项目负责人， 项目创建时间团队： 团队名称， 团队负责人， 团队人数， 团队创建时间人员： 姓名， 团队负责人， 任务负责人， 工号， 性别， 年龄， 工龄， 归属单位">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>数据库项目实践（一） | SGYX</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">SGYX</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">SGYX</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.postimg.cc/bNBBkkw3/timg.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        数据库项目实践（一）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="项目整体需求分析"><a href="#项目整体需求分析" class="headerlink" title="项目整体需求分析"></a>项目整体需求分析</h2><p>项目： <strong>项目名称</strong>， 计划名称， 项目类型， 项目进度， 项目负责人， 项目创建时间<br>团队： <strong>团队名称</strong>， 团队负责人， 团队人数， 团队创建时间<br>人员： 姓名， 团队负责人， 任务负责人， <strong>工号</strong>， 性别， 年龄， 工龄， 归属单位<br>任务资源： <strong>资源名称</strong>， 资源种类， 资源能力， 归属单位<br>任务： <strong>任务名称</strong>， 任务负责人， 任务预算， 实际花费， 任务总进度， 花费时间<br>订单：<strong>物品名称</strong>， 价格， 种类<br>项目计划： <strong>计划名称</strong>， 预算， 花费时间， 阶段划分<br>风险： <strong>风险名称</strong>， 风险种类， 解决方法<br>项目变更： <strong>变更编号</strong>， 变更前类型， 变更后类型， 变更原因， 变更时间<br>加粗的为主码</p>
+<h2 id="ER图实现"><a href="#ER图实现" class="headerlink" title="ER图实现"></a>ER图实现</h2><h3 id="分表实现"><a href="#分表实现" class="headerlink" title="分表实现"></a>分表实现</h3><p><a href="https://postimg.cc/p9mk4sB2" target="_blank" rel="noopener"><img src="https://i.postimg.cc/0Nf363MJ/RS-H-F-JIFT-G32-O-J.png" alt="各个主键ER图"></a></p>
+<h3 id="总和实现"><a href="#总和实现" class="headerlink" title="总和实现"></a>总和实现</h3><p><a href="https://postimg.cc/sM6wTk76" target="_blank" rel="noopener"><img src="https://i.postimg.cc/s2yqgyXr/522-VO-YM-SLB-YX6-A-MD.png" alt="完整ER图"></a></p>
+<h2 id="CDM图实现"><a href="#CDM图实现" class="headerlink" title="CDM图实现"></a>CDM图实现</h2><p> <a href="https://postimg.cc/yg9jYW5t" target="_blank" rel="noopener"><img src="https://i.postimg.cc/rmZPjr9V/1.jpg" alt="CDM图"></a></p>
+<h2 id="PMD图实现"><a href="#PMD图实现" class="headerlink" title="PMD图实现"></a>PMD图实现</h2><p> <a href="https://postimg.cc/VS248X7X" target="_blank" rel="noopener"><img src="https://i.postimg.cc/26Stnwh9/2.jpg" alt="PDM图"></a></p>
+<h2 id="SQL-SERVER2012-代码生成"><a href="#SQL-SERVER2012-代码生成" class="headerlink" title="SQL SERVER2012 代码生成"></a>SQL SERVER2012 代码生成</h2><pre><code>  /*==============================================================*/
+  /* DBMS name:      Microsoft SQL Server 2012                    */
+  /* Created on:     2019/12/14 18:45:09                          */
+  /*==============================================================*/
+
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Change&#39;) and o.name = &#39;FK_CHANGE_ADMINISTE_PROJECT&#39;)
+  alter table Change
+    drop constraint FK_CHANGE_ADMINISTE_PROJECT
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Difficult&#39;) and o.name = &#39;FK_DIFFICUL_ADMINISTE_PROJECT&#39;)
+  alter table Difficult
+    drop constraint FK_DIFFICUL_ADMINISTE_PROJECT
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;&quot;Plan&quot;&#39;) and o.name = &#39;FK_PLAN_ADMINISTE_PROJECT&#39;)
+  alter table &quot;Plan&quot;
+    drop constraint FK_PLAN_ADMINISTE_PROJECT
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Project&#39;) and o.name = &#39;FK_PROJECT_ADMINISTE_PLAN&#39;)
+  alter table Project
+    drop constraint FK_PROJECT_ADMINISTE_PLAN
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Purchaes&#39;) and o.name = &#39;FK_PURCHAES_PURCHAES_TASK&#39;)
+  alter table Purchaes
+    drop constraint FK_PURCHAES_PURCHAES_TASK
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Purchaes&#39;) and o.name = &#39;FK_PURCHAES_PURCHAES2_ORDER&#39;)
+  alter table Purchaes
+    drop constraint FK_PURCHAES_PURCHAES2_ORDER
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;&quot;Resource Usage&quot;&#39;) and o.name = &#39;FK_RESOURCE_RESOURCE _TASK&#39;)
+  alter table &quot;Resource Usage&quot;
+    drop constraint &quot;FK_RESOURCE_RESOURCE _TASK&quot;
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;&quot;Resource Usage&quot;&#39;) and o.name = &#39;FK_RESOURCE_RESOURCE _RESOURCE&#39;)
+  alter table &quot;Resource Usage&quot;
+    drop constraint &quot;FK_RESOURCE_RESOURCE _RESOURCE&quot;
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Staff&#39;) and o.name = &#39;FK_STAFF_MAKE2_TASK&#39;)
+  alter table Staff
+    drop constraint FK_STAFF_MAKE2_TASK
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Staff&#39;) and o.name = &#39;FK_STAFF_RELATIONS_TEAM&#39;)
+  alter table Staff
+    drop constraint FK_STAFF_RELATIONS_TEAM
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Staff&#39;) and o.name = &#39;FK_STAFF_TEAM LEAD_STAFF&#39;)
+  alter table Staff
+    drop constraint &quot;FK_STAFF_TEAM LEAD_STAFF&quot;
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Task&#39;) and o.name = &#39;FK_TASK_INCLUDE_PROJECT&#39;)
+  alter table Task
+    drop constraint FK_TASK_INCLUDE_PROJECT
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Task&#39;) and o.name = &#39;FK_TASK_MAKE_STAFF&#39;)
+  alter table Task
+    drop constraint FK_TASK_MAKE_STAFF
+  go
+
+  if exists (select 1
+    from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = &#39;F&#39;)
+    where r.fkeyid = object_id(&#39;Team&#39;) and o.name = &#39;FK_TEAM_IMPLEMENT_PROJECT&#39;)
+  alter table Team
+    drop constraint FK_TEAM_IMPLEMENT_PROJECT
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Change&#39;)
+              and   name  = &#39;Administer4_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Change.Administer4_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Change&#39;)
+              and   type = &#39;U&#39;)
+    drop table Change
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Difficult&#39;)
+              and   name  = &#39;Administer3_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Difficult.Administer3_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Difficult&#39;)
+              and   type = &#39;U&#39;)
+    drop table Difficult
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;&quot;Order&quot;&#39;)
+              and   type = &#39;U&#39;)
+    drop table &quot;Order&quot;
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;&quot;Plan&quot;&#39;)
+              and   name  = &#39;Administer2_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index &quot;Plan&quot;.Administer2_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;&quot;Plan&quot;&#39;)
+              and   type = &#39;U&#39;)
+    drop table &quot;Plan&quot;
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Project&#39;)
+              and   name  = &#39;Administer1_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Project.Administer1_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Project&#39;)
+              and   type = &#39;U&#39;)
+    drop table Project
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Purchaes&#39;)
+              and   name  = &#39;Purchaes2_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Purchaes.Purchaes2_FK
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Purchaes&#39;)
+              and   name  = &#39;Purchaes_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Purchaes.Purchaes_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Purchaes&#39;)
+              and   type = &#39;U&#39;)
+    drop table Purchaes
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;&quot;Resource Usage&quot;&#39;)
+              and   name  = &#39;Resource Usage2_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index &quot;Resource Usage&quot;.&quot;Resource Usage2_FK&quot;
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;&quot;Resource Usage&quot;&#39;)
+              and   name  = &#39;Resource Usage_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index &quot;Resource Usage&quot;.&quot;Resource Usage_FK&quot;
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;&quot;Resource Usage&quot;&#39;)
+              and   type = &#39;U&#39;)
+    drop table &quot;Resource Usage&quot;
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Resources&#39;)
+              and   type = &#39;U&#39;)
+    drop table Resources
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Staff&#39;)
+              and   name  = &#39;Team Leader_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Staff.&quot;Team Leader_FK&quot;
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Staff&#39;)
+              and   name  = &#39;Make2_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Staff.Make2_FK
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Staff&#39;)
+              and   name  = &#39;Relationship_6_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Staff.Relationship_6_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Staff&#39;)
+              and   type = &#39;U&#39;)
+    drop table Staff
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Task&#39;)
+              and   name  = &#39;Make_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Task.Make_FK
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Task&#39;)
+              and   name  = &#39;Include_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Task.Include_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Task&#39;)
+              and   type = &#39;U&#39;)
+    drop table Task
+  go
+
+  if exists (select 1
+              from  sysindexes
+            where  id    = object_id(&#39;Team&#39;)
+              and   name  = &#39;Implement_FK&#39;
+              and   indid &gt; 0
+              and   indid &lt; 255)
+    drop index Team.Implement_FK
+  go
+
+  if exists (select 1
+              from  sysobjects
+            where  id = object_id(&#39;Team&#39;)
+              and   type = &#39;U&#39;)
+    drop table Team
+  go
+
+  /*==============================================================*/
+  /* Table: Change                                                */
+  /*==============================================================*/
+  create table Change (
+    ChangeNo             char(10)             not null,
+    ProjectName          char(20)             null,
+    ChangeBeforeType     char(15)             not null,
+    ChangeAfterType      char(15)             not null,
+    ChangeReason         char(50)             not null,
+    ChangeTime           datetime             not null,
+    constraint PK_CHANGE primary key nonclustered (ChangeNo)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Administer4_FK                                        */
+  /*==============================================================*/
+  create index Administer4_FK on Change (
+  ProjectName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Difficult                                             */
+  /*==============================================================*/
+  create table Difficult (
+    DifficultName        char(20)             not null,
+    ProjectName          char(20)             null,
+    DifficultType        char(15)             not null,
+    constraint PK_DIFFICULT primary key nonclustered (DifficultName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Administer3_FK                                        */
+  /*==============================================================*/
+  create index Administer3_FK on Difficult (
+  ProjectName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: &quot;Order&quot;                                               */
+  /*==============================================================*/
+  create table &quot;Order&quot; (
+    OrderName            char(10)             not null,
+    OrderPrice           int                  not null,
+    OrderType            char(15)             not null,
+    constraint PK_ORDER primary key nonclustered (OrderName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: &quot;Plan&quot;                                                */
+  /*==============================================================*/
+  create table &quot;Plan&quot; (
+    PlanName             char(20)             not null,
+    ProjectName          char(20)             null,
+    PlanBudget           int                  not null,
+    PlanTime             datetime             not null,
+    PlanFeasibility      char(2)              not null,
+    constraint PK_PLAN primary key nonclustered (PlanName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Administer2_FK                                        */
+  /*==============================================================*/
+  create index Administer2_FK on &quot;Plan&quot; (
+  ProjectName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Project                                               */
+  /*==============================================================*/
+  create table Project (
+    ProjectName          char(20)             not null,
+    PlanName             char(20)             null,
+    ProjectType          char(15)             not null,
+    ProjectProgress      char(10)             not null,
+    ProjectLeader        char(10)             not null,
+    ProjectCreateTime    datetime             not null,
+    constraint PK_PROJECT primary key nonclustered (ProjectName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Administer1_FK                                        */
+  /*==============================================================*/
+  create index Administer1_FK on Project (
+  PlanName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Purchaes                                              */
+  /*==============================================================*/
+  create table Purchaes (
+    TaskName             char(20)             not null,
+    OrderName            char(10)             not null,
+    PurchaseNumber       int                  null,
+    constraint PK_PURCHAES primary key (TaskName, OrderName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Purchaes_FK                                           */
+  /*==============================================================*/
+  create index Purchaes_FK on Purchaes (
+  TaskName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Purchaes2_FK                                          */
+  /*==============================================================*/
+  create index Purchaes2_FK on Purchaes (
+  OrderName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: &quot;Resource Usage&quot;                                      */
+  /*==============================================================*/
+  create table &quot;Resource Usage&quot; (
+    TaskName             char(20)             not null,
+    ResourcesName        char(20)             not null,
+    &quot;Use Duration&quot;       char(10)             null,
+    constraint &quot;PK_RESOURCE USAGE&quot; primary key (TaskName, ResourcesName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: &quot;Resource Usage_FK&quot;                                   */
+  /*==============================================================*/
+  create index &quot;Resource Usage_FK&quot; on &quot;Resource Usage&quot; (
+  TaskName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: &quot;Resource Usage2_FK&quot;                                  */
+  /*==============================================================*/
+  create index &quot;Resource Usage2_FK&quot; on &quot;Resource Usage&quot; (
+  ResourcesName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Resources                                             */
+  /*==============================================================*/
+  create table Resources (
+    ResourcesName        char(20)             not null,
+    ResourcesType        char(15)             not null,
+    ResourcesAbility     char(20)             not null,
+    ResourcesAscription  char(10)             not null,
+    constraint PK_RESOURCES primary key nonclustered (ResourcesName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Staff                                                 */
+  /*==============================================================*/
+  create table Staff (
+    StaffName            char(10)             not null,
+    StaffNo              char(10)             not null,
+    TaskName             char(20)             null,
+    TeamName             char(20)             null,
+    Sta_StaffNo          char(10)             null,
+    StaffSex             char(2)              not null,
+    StaffAge             int                  not null,
+    StaffWorkYear        int                  not null,
+    StaffAscription      char(10)             not null,
+    constraint PK_STAFF primary key nonclustered (StaffNo)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Relationship_6_FK                                     */
+  /*==============================================================*/
+  create index Relationship_6_FK on Staff (
+  TeamName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Make2_FK                                              */
+  /*==============================================================*/
+  create index Make2_FK on Staff (
+  TaskName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: &quot;Team Leader_FK&quot;                                      */
+  /*==============================================================*/
+  create index &quot;Team Leader_FK&quot; on Staff (
+  Sta_StaffNo ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Task                                                  */
+  /*==============================================================*/
+  create table Task (
+    TaskName             char(20)             not null,
+    StaffNo              char(10)             null,
+    ProjectName          char(20)             null,
+    TaskLeader           char(10)             not null,
+    TaskBudget           int                  not null,
+    TaskCost             int                  not null,
+    TaskState            char(10)             not null,
+    TaskTime             char(10)             not null,
+    constraint PK_TASK primary key nonclustered (TaskName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Include_FK                                            */
+  /*==============================================================*/
+  create index Include_FK on Task (
+  ProjectName ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Make_FK                                               */
+  /*==============================================================*/
+  create index Make_FK on Task (
+  StaffNo ASC
+  )
+  go
+
+  /*==============================================================*/
+  /* Table: Team                                                  */
+  /*==============================================================*/
+  create table Team (
+    TeamName             char(20)             not null,
+    ProjectName          char(20)             null,
+    TeamLeader           char(10)             not null,
+    TeamNumber           int                  not null,
+    TeamCreateTime       datetime             not null,
+    constraint PK_TEAM primary key nonclustered (TeamName)
+  )
+  go
+
+  /*==============================================================*/
+  /* Index: Implement_FK                                          */
+  /*==============================================================*/
+  create index Implement_FK on Team (
+  ProjectName ASC
+  )
+  go
+
+  alter table Change
+    add constraint FK_CHANGE_ADMINISTE_PROJECT foreign key (ProjectName)
+        references Project (ProjectName)
+  go
+
+  alter table Difficult
+    add constraint FK_DIFFICUL_ADMINISTE_PROJECT foreign key (ProjectName)
+        references Project (ProjectName)
+  go
+
+  alter table &quot;Plan&quot;
+    add constraint FK_PLAN_ADMINISTE_PROJECT foreign key (ProjectName)
+        references Project (ProjectName)
+  go
+
+  alter table Project
+    add constraint FK_PROJECT_ADMINISTE_PLAN foreign key (PlanName)
+        references &quot;Plan&quot; (PlanName)
+  go
+
+  alter table Purchaes
+    add constraint FK_PURCHAES_PURCHAES_TASK foreign key (TaskName)
+        references Task (TaskName)
+  go
+
+  alter table Purchaes
+    add constraint FK_PURCHAES_PURCHAES2_ORDER foreign key (OrderName)
+        references &quot;Order&quot; (OrderName)
+  go
+
+  alter table &quot;Resource Usage&quot;
+    add constraint &quot;FK_RESOURCE_RESOURCE _TASK&quot; foreign key (TaskName)
+        references Task (TaskName)
+  go
+
+  alter table &quot;Resource Usage&quot;
+    add constraint &quot;FK_RESOURCE_RESOURCE _RESOURCE&quot; foreign key (ResourcesName)
+        references Resources (ResourcesName)
+  go
+
+  alter table Staff
+    add constraint FK_STAFF_MAKE2_TASK foreign key (TaskName)
+        references Task (TaskName)
+  go
+
+  alter table Staff
+    add constraint FK_STAFF_RELATIONS_TEAM foreign key (TeamName)
+        references Team (TeamName)
+  go
+
+  alter table Staff
+    add constraint &quot;FK_STAFF_TEAM LEAD_STAFF&quot; foreign key (Sta_StaffNo)
+        references Staff (StaffNo)
+  go
+
+  alter table Task
+    add constraint FK_TASK_INCLUDE_PROJECT foreign key (ProjectName)
+        references Project (ProjectName)
+  go
+
+  alter table Task
+    add constraint FK_TASK_MAKE_STAFF foreign key (StaffNo)
+        references Staff (StaffNo)
+  go
+
+  alter table Team
+    add constraint FK_TEAM_IMPLEMENT_PROJECT foreign key (ProjectName)
+        references Project (ProjectName)
+  go
+</code></pre>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://sgyx.github.io" rel="external nofollow noreferrer">sgyx</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://sgyx.github.io/2019/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/">http://sgyx.github.io/2019/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://sgyx.github.io" target="_blank">sgyx</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/">
+                    <div class="card-image">
+                        
+                        <img src="https://i.postimg.cc/bNBBkkw3/timg.jpg" class="responsive-img" alt="数据库项目实践（一）">
+                        
+                        <span class="card-title">数据库项目实践（一）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            项目整体需求分析项目： 项目名称， 计划名称， 项目类型， 项目进度， 项目负责人， 项目创建时间团队： 团队名称， 团队负责人， 团队人数， 团队创建时间人员： 姓名， 团队负责人， 任务负责人， 工号， 性别， 年龄， 工龄， 归属单位
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            sgyx
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/14/%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89/">
+                    <div class="card-image">
+                        
+                        <img src="https://i.postimg.cc/bNBBkkw3/timg.jpg" class="responsive-img" alt="数据库项目实践（一）">
+                        
+                        <span class="card-title">数据库项目实践（一）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            项目整体需求分析项目： 项目名称， 计划名称， 项目类型， 项目进度， 项目负责人， 项目创建时间团队： 团队名称， 团队负责人， 团队人数， 团队创建时间人员： 姓名， 团队负责人， 任务负责人， 工号， 性别， 年龄， 工龄， 归属单位
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            sgyx
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">年份</span>
+            <a href="http://sgyx.github.io" target="_blank">SGYX</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "11";
+                    var startDate = "30";
+                    var startHour = "23";
+                    var startMinute = "53";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/sgyx" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
